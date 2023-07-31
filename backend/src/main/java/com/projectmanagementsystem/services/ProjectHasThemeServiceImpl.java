@@ -18,7 +18,7 @@ public class ProjectHasThemeServiceImpl implements ProjectHasThemeService{
     }
 
     @Override
-    public List<ProjectModel> getProjectsByTheme(int themeID) {
-        return projectHasThemeRepository.findProjectsByThemeId(themeID);
+    public List<ProjectModel> getProjectsByTheme(int theme) {
+        return projectHasThemeRepository.findProjectsByThemeId(theme);
     }
 }

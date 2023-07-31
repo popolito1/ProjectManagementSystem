@@ -19,8 +19,8 @@ public class ProjectHasThemeController {
     }
 
     @GetMapping("/{themeId}")
-    public List<ProjectModel> getThemeById(@PathVariable int themeId) {
-        return projectHasThemeService.getProjectsByTheme(themeId);
+    public List<ProjectModel> getThemeById(@PathVariable int theme) {
+        return projectHasThemeService.getProjectsByTheme(theme);
     }
 
 

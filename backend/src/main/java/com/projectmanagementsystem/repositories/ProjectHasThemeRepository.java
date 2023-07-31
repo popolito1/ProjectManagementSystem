@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface ProjectHasThemeRepository extends JpaRepository<ProjectHasThemeModel, Integer> {
-    @Query("SELECT pt.project FROM ProjectHasThemeModel pt WHERE pt.theme.theme = :themeID")
-    List<ProjectModel> findProjectsByThemeId(@Param("themeId") int themeID);
+    @Query("SELECT pt.project FROM ProjectHasThemeModel pt WHERE pt.theme.theme = :theme")
+    List<ProjectModel> findProjectsByThemeId(@Param("theme") int theme);
 }
