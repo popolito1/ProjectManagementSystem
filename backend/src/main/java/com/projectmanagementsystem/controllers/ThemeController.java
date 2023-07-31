@@ -1,8 +1,6 @@
 package com.projectmanagementsystem.controllers;
 
-import com.projectmanagementsystem.models.ProjectModel;
 import com.projectmanagementsystem.models.ThemeModel;
-import com.projectmanagementsystem.services.ProjectService;
 import com.projectmanagementsystem.services.ThemeService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,9 +19,8 @@ public class ThemeController {
     @PostMapping("/add")
     public String createUser(@RequestBody ThemeModel theme){
         themeService.saveProject(theme);
-        return "New project is added";
+        return "New theme is added";
     }
-
     @GetMapping
     public List<ThemeModel> getAllProjects() {
         return themeService.getAllThemes();
