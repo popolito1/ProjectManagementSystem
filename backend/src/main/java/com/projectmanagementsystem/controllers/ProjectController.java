@@ -1,7 +1,8 @@
 package com.projectmanagementsystem.controllers;
 
 import com.projectmanagementsystem.models.ProjectModel;
-import com.projectmanagementsystem.services.ProjectService;
+import com.projectmanagementsystem.security.services.ProjectService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.Optional;
 @RequestMapping("api/projects")
 public class ProjectController {
     private final ProjectService projectService;
-
+    @Autowired
     public ProjectController( ProjectService projectService) {
         this.projectService = projectService;
     }

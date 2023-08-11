@@ -1,7 +1,8 @@
 package com.projectmanagementsystem.controllers;
 
 import com.projectmanagementsystem.models.ThemeModel;
-import com.projectmanagementsystem.services.ThemeService;
+import com.projectmanagementsystem.security.services.ThemeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.Optional;
 @RequestMapping("api/themes")
 public class ThemeController {
     private final ThemeService themeService;
-
+    @Autowired
     public ThemeController( ThemeService themeService) {
         this.themeService = themeService;
     }
