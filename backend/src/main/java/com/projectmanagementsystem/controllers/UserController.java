@@ -3,10 +3,13 @@ package com.projectmanagementsystem.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import com.projectmanagementsystem.response.MessageResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.projectmanagementsystem.models.UserModel;
-import com.projectmanagementsystem.services.UserService;
+import com.projectmanagementsystem.security.services.UserService;
 
 @RestController
 @RequestMapping("api/users")
@@ -14,6 +17,7 @@ public class UserController {
 
     private final UserService userService;
 
+    @Autowired
     public UserController( UserService userService) {
         this.userService = userService;
     }
@@ -22,6 +26,19 @@ public class UserController {
     public String createUser(@RequestBody UserModel user){
         userService.saveUser(user);
         return "New user is added";
+    }
+
+    @GetMapping("/all")
+    public MessageResponse allAccess() {
+        return new MessageResponse("Server is up.....");
+    }
+
+    @GetMapping("/greeting")
+    @PreAuthorize("isAuthenticated()")
+    public MessageResponse userAccess() {
+
+        return new MessageResponse
+                ("Congratulations! You are an authenticated user.");
     }
 
     @GetMapping

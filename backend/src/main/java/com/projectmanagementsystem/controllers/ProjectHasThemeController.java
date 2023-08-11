@@ -1,19 +1,18 @@
 package com.projectmanagementsystem.controllers;
 
-import com.projectmanagementsystem.models.ProjectHasThemeModel;
 import com.projectmanagementsystem.models.ProjectModel;
-import com.projectmanagementsystem.services.ProjectHasThemeService;
+import com.projectmanagementsystem.security.services.ProjectHasThemeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("api/project-has-theme")
 public class ProjectHasThemeController {
     private final ProjectHasThemeService projectHasThemeService;
-
+    @Autowired
     public ProjectHasThemeController( ProjectHasThemeService projectHasThemeService) {
         this.projectHasThemeService = projectHasThemeService;
     }

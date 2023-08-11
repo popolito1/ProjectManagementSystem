@@ -1,4 +1,4 @@
-package com.projectmanagementsystem.services;
+package com.projectmanagementsystem.security.services;
 
 import com.projectmanagementsystem.models.ProjectWidgetMapModel;
 
